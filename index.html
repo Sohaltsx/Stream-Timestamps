@@ -552,8 +552,9 @@
   document.addEventListener('keydown', function(e){
     const tag = document.activeElement.tagName;
     if(e.key === 'Escape'){
-      document.getElementById('note-input').blur();
+      e.preventDefault();
       document.getElementById('note-input').value = '';
+      document.getElementById('note-input').blur();
       return;
     }
     if(tag === 'INPUT' || tag === 'TEXTAREA') return;
